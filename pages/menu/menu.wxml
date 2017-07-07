@@ -1,0 +1,15 @@
+<view class="head">
+  <input  />
+  <button type="default">ADD</button>
+</view>
+<view class="list">
+  <text>2017-7-5 Rice</text>
+  <text>2017-7-5 Rice</text>
+  <text>2017-7-5 Rice</text>
+  <text>2017-7-5 Rice</text>
+  <text>2017-7-5 Rice</text>
+</view>
+<view class="buttons">
+  <button>toggle</button>
+  <button>delete selected</button>
+</view>

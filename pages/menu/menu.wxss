@@ -1,0 +1,33 @@
+page {
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+}
+.head {
+  display: flex;
+  padding: 20rpx;
+  align-items: center;
+}
+.head input {
+  flex: 1;
+  border: 1px solid grey;
+  padding: 0 10rpx;
+  
+  border-radius: 5rpx;
+  margin-right: 20rpx;
+}
+.head button {
+  height: 60rpx;
+  display: flex;
+  align-items: center;
+}
+.list {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding: 20rpx;
+}
+.list text {
+  margin: 10rpx 0;
+}

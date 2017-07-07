@@ -1,10 +1,19 @@
-<!--index.wxml-->
-<view class="container">
-  <view  bindtap="bindViewTap" class="userinfo">
-    <image class="userinfo-avatar" src="{{userInfo.avatarUrl}}" background-size="cover"></image>
-    <text class="userinfo-nickname">{{userInfo.nickName}}</text>
+<view class="banner">
+  <image src="https://pic.c-ctrip.com/eurail_v2/pic_eu2/france5.jpg"></image>
+</view>
+<view class="content">
+  <view class="date">
+    <text>2017-7-7 星期三</text>
   </view>
-  <view class="usermotto">
-    <text class="user-motto">{{motto}}</text>
+  <view class="recommend">
+    <text>今日推荐:</text>
+    <text>红烧肉</text>
   </view>
+  <view class="random">
+    <button type="primary">随机</button>
+  </view>
+</view>
+<view class="buttons">
+  <button type="default" data-page="menu" bindtap="toPage">Menu</button>
+  <button type="default" data-page="history" bindtap="toPage">History</button>
 </view>

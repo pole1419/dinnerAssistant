@@ -1,0 +1,13 @@
+<view class="history">
+  <text>2017-11-12 星期三 Rice</text>
+  <text>2017-11-12 星期三 Rice</text>
+  <text>2017-11-12 星期三 Rice</text>
+  <text>2017-11-12 星期三 Rice</text>
+  <text>2017-11-12 星期三 Rice</text>
+  <text>2017-11-12 星期三 Rice</text>
+  <text>2017-11-12 星期三 Rice</text>
+  <text>2017-11-12 星期三 Rice</text>
+  <text>2017-11-12 星期三 Rice</text>
+  <text>2017-11-12 星期三 Rice</text>
+</view>
+<button type="default">Rest</button>
