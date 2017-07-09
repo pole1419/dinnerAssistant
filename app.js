@@ -1,29 +1,29 @@
 //app.js
+const defaultMenu = require('./utils/config.js').defaultMenu
+
 App({
-  onLaunch: function() {
-    //调用API从本地缓存中获取数据
-    var logs = wx.getStorageSync('logs') || []
-    logs.unshift(Date.now())
-    wx.setStorageSync('logs', logs)
-  },
+    globalData: {
+        // userInfo: null
+        recommend: '',
+        menu: [],
+        history: [],
+    },
 
-  getUserInfo: function(cb) {
-    var that = this
-    if (this.globalData.userInfo) {
-      typeof cb == "function" && cb(this.globalData.userInfo)
-    } else {
-      //调用登录接口
-      wx.getUserInfo({
-        withCredentials: false,
-        success: function(res) {
-          that.globalData.userInfo = res.userInfo
-          typeof cb == "function" && cb(that.globalData.userInfo)
+    onLaunch() {
+        //调用API从本地缓存中获取数据
+        // var logs = wx.getStorageSync('logs') || []
+        // logs.unshift(Date.now())
+        // wx.setStorageSync('logs', logs)
+        this.restoreData()
+    },
+
+    restoreData: function () {
+        const menuStore = wx.getStorageSync('menu') || defaultMenu
+        const historyStore = wx.getStorageSync('history') || []
+        this.data = {
+            menu: menuStore,
+            history: historyStore,
         }
-      })
     }
-  },
-
-  globalData: {
-    userInfo: null
-  }
+    // todo 随机推荐，初始化日期
 })

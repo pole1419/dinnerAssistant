@@ -4,10 +4,6 @@ page {
   display: flex;
   flex-direction: column;
 }
-.banner{
-  height: 30%;
-  overflow: hidden
-}
 .banner image {
   width: 100%;
 }
@@ -25,10 +21,8 @@ page {
 .content view text {
   margin: 0 10rpx;
 }
-.buttons {
-  widows: 100%;
-  display: flex;
-}
-.buttons button{
-  flex: 1;
+.rocommend-item {
+    display: inline-block;
+    width: 200rpx;
+    text-align: center;
 }

@@ -16,6 +16,33 @@ function formatNumber(n) {
   return n[1] ? n : '0' + n
 }
 
+
+function getDateSplit(d = new Date) {
+    const year = d.getFullYear(),
+        month = d.getMonth() + 1,
+        date = d.getDate(),
+        dayArray = ['日', '一', '二', '三', '四', '五', '六'],
+        day = dayArray[d.getDay()];
+    return {
+        year,
+        month,
+        date,
+        day,
+    }
+}
+
+function getDateStr(d) {
+  const { year, month, date } = getDateSplit(d)
+  return `${year}-${month}-${date}`  
+}
+
+function getDayStr(d) {
+    const { day } = getDateSplit(d)
+    return `星期${day}`
+}
+
 module.exports = {
-  formatTime: formatTime
+  formatTime,
+  getDateStr,
+  getDayStr,
 }
