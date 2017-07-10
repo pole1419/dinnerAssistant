@@ -1,13 +1,14 @@
 <view class="history">
-  <text>2017-11-12 星期三 Rice</text>
-  <text>2017-11-12 星期三 Rice</text>
-  <text>2017-11-12 星期三 Rice</text>
-  <text>2017-11-12 星期三 Rice</text>
-  <text>2017-11-12 星期三 Rice</text>
-  <text>2017-11-12 星期三 Rice</text>
-  <text>2017-11-12 星期三 Rice</text>
-  <text>2017-11-12 星期三 Rice</text>
-  <text>2017-11-12 星期三 Rice</text>
-  <text>2017-11-12 星期三 Rice</text>
+    <view class="history-item"
+        wx:if="{{history.length}}"
+        wx:for="{{history}}">
+        <text>{{item.dateStr}}</text>
+        <text>{{item.val}}</text>
+    </view>
+    <view class="no_record"
+        wx:if="{{!history.length}}">
+        <image src="../../images/no_record.gif"></image>
+        <text>{{noRecordTip}}</text>
+    </view>
 </view>
-<button type="default">Rest</button>
+<button wx:if="{{history.length}}" type="default" bindtap="clearRecord">Rest</button>

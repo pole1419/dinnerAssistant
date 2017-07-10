@@ -10,6 +10,12 @@
     <text class="rocommend-item">{{recommend}}</text>
   </view>
   <view class="random">
-    <button type="{{isChanging ? 'default' : 'primary'}}" bindtap="changeRecommend">随机</button>
+    <button type="default"
+            bindtap="changeRecommend"
+            disabled="{{isChanging}}"
+            loading="{{isChanging}}"
+    >更换</button>
+    <button type="primary"
+            bindtap="confirm">保存</button>
   </view>
 </view>

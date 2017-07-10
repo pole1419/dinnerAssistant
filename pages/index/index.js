@@ -1,5 +1,7 @@
 import util from '../../utils/util'
 
+let app = getApp()
+
 Page({
   data: {
     bannerUrl: 'https://s4.sinaimg.cn/mw690/64e35cbfgdb28162dada3&690',
@@ -25,18 +27,17 @@ Page({
   },
 
   initRecommend() {
-      const list = getApp().data.menu
+      const list = app.globalData.menu
       this.setData({
           recommend: list[0]
       })
   },
 
   changeRecommend() {
-      if (this.data.isChanging) { return }
       this.setData({
           isChanging: true
       })
-      const menu = getApp().data.menu
+      const menu = app.globalData.menu
       const end = setInterval(() => {
           const idx = Math.floor(Math.random() * menu.length)
           this.setData({
@@ -50,6 +51,19 @@ Page({
             isChanging: false
         })
       }, this.data.randomConfig.duration * 1000)
+  },
+
+  confirm() {
+      const length = app.globalData.history.length
+      if (!length || app.globalData.history[length - 1].dateStr !== this.data.dateStr) {
+          app.globalData.history.push({
+              dateStr: this.data.dateStr,
+              val: this.data.recommend
+          })
+      } else {
+          app.globalData.history[length -1].val = this.data.recommend
+      }
+      wx.setStorageSync('history', app.globalData.history)
   }
 
 })

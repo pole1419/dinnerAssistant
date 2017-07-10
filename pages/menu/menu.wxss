@@ -3,24 +3,27 @@ page {
   display: flex;
   flex-direction: column;
 }
+
 .head {
   display: flex;
   padding: 20rpx;
   align-items: center;
 }
+
 .head input {
   flex: 1;
   border: 1px solid grey;
   padding: 0 10rpx;
-  
   border-radius: 5rpx;
   margin-right: 20rpx;
 }
+
 .head button {
   height: 60rpx;
   display: flex;
   align-items: center;
 }
+
 .list {
   flex: 1;
   display: flex;
@@ -28,6 +31,19 @@ page {
   align-items: center;
   padding: 20rpx;
 }
-.list text {
-  margin: 10rpx 0;
+
+.list-item {
+  box-sizing: border-box;
+  padding: 10rpx;
+  width: 100%;
+  display: flex;
+  position: relative;
+}
+.list-item text {
+    width: 100%;
+    text-align: center;
+}
+.list-item icon {
+    position: absolute;
+    left: 60rpx;
 }

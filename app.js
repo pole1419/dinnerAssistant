@@ -20,7 +20,7 @@ App({
     restoreData: function () {
         const menuStore = wx.getStorageSync('menu') || defaultMenu
         const historyStore = wx.getStorageSync('history') || []
-        this.data = {
+        this.globalData = {
             menu: menuStore,
             history: historyStore,
         }

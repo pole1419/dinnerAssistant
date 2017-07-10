@@ -26,3 +26,10 @@ page {
     width: 200rpx;
     text-align: center;
 }
+.random {
+        display: flex;
+}
+.random button {
+    width: 200rpx;
+    margin: 0 20rpx;
+}

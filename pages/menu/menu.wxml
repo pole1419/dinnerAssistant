@@ -1,15 +1,18 @@
 <view class="head">
-  <input  />
-  <button type="default">ADD</button>
+  <input  bindinput="addItem"/>
+  <button type="default" bindtap="addItem">ADD</button>
 </view>
 <view class="list">
-  <text>2017-7-5 Rice</text>
-  <text>2017-7-5 Rice</text>
-  <text>2017-7-5 Rice</text>
-  <text>2017-7-5 Rice</text>
-  <text>2017-7-5 Rice</text>
+  <view class="list-item"
+        wx:for="{{menu}}"
+        bindtap="clickItem"
+        data-index="{{index}}"
+        wx:key="{{index}}">
+    <icon wx:if="{{item.selected}}" type="success_no_circle" />
+    <text>{{item.val}}</text>
+  </view>
 </view>
-<view class="buttons">
-  <button>toggle</button>
-  <button>delete selected</button>
+<view class="buttons" wx:if="{{menu.length}}">
+  <button bindtap="deleteAll">delete all</button>
+  <button wx:if="{{selectedLength}}" bindtap="deleteSelected">delete selected</button>
 </view>
