@@ -8,8 +8,7 @@
     "backgroundTextStyle":"light",
     "navigationBarTitleText": "Dinner Assistant",
     "navigationBarBackgroundColor": "white",
-    "navigationBarTextStyle": "black",
-    "enablePullDownRefresh": "false"
+    "navigationBarTextStyle": "black"
   },
   "tabBar": {
     "color": "#000",
@@ -19,19 +18,19 @@
     "list": [
       {
         "pagePath": "pages/index/index",
-        "text": "Home",
+        "text": "首页",
         "iconPath": "images/home.png",
         "selectedIconPath": "images/home_on.png"
       },
       {
         "pagePath": "pages/menu/menu",
-        "text": "Menu",
+        "text": "菜单",
         "iconPath": "images/menu.png",
         "selectedIconPath": "images/menu_on.png"
       },
       {
         "pagePath": "pages/history/history",
-        "text": "text",
+        "text": "记录",
         "iconPath": "images/history.png",
         "selectedIconPath": "images/history_on.png"
       }

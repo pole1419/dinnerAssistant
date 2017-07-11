@@ -11,4 +11,4 @@
         <text>{{noRecordTip}}</text>
     </view>
 </view>
-<button wx:if="{{history.length}}" type="default" bindtap="clearRecord">Rest</button>
+<button wx:if="{{history.length}}" type="default" bindtap="clearRecord">清除记录</button>

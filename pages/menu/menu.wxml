@@ -1,18 +1,14 @@
 <view class="head">
-  <input  bindinput="addItem"/>
-  <button type="default" bindtap="addItem">ADD</button>
+  <input bindchange="addItem" value="{{inputVal}}" placeholder="输入并添加" />
+  <!--<button type="default" bindtap="addItem">ADD</button>-->
 </view>
 <view class="list">
-  <view class="list-item"
-        wx:for="{{menu}}"
-        bindtap="clickItem"
-        data-index="{{index}}"
-        wx:key="{{index}}">
+  <view class="list-item" wx:for="{{menu}}" bindtap="clickItem" data-index="{{index}}" wx:key="{{index}}">
     <icon wx:if="{{item.selected}}" type="success_no_circle" />
     <text>{{item.val}}</text>
   </view>
 </view>
 <view class="buttons" wx:if="{{menu.length}}">
-  <button bindtap="deleteAll">delete all</button>
-  <button wx:if="{{selectedLength}}" bindtap="deleteSelected">delete selected</button>
+  <button wx:if="{{selectedLength}}" bindtap="deleteSelected">删除已选</button>
+  <button bindtap="deleteAll">删除所有</button>
 </view>

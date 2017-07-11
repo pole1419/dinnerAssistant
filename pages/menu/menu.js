@@ -1,6 +1,7 @@
 let app = getApp()
 Page({
     data: {
+        inputVal: '',
         menu: [],
         selectedLength: 0,
     },
@@ -23,8 +24,17 @@ Page({
     },
 
     addItem(event) {
-        console.log(event.keyCode)
-        // if(event.type === 'keyup')
+        const val = event.detail.value.trim()
+        if (!val) { return }
+        const newMenu = this.data.menu.concat({
+            val: val,
+            selected: false,
+        })
+        this.setData({
+            inputVal: '',
+            menu: newMenu,
+        })
+        this.storeMenu()
     },
 
     clickItem(event) {
@@ -47,10 +57,21 @@ Page({
     },
 
     deleteAll() {
-        this.setData({
-            menu: []
+        wx.showModal({
+            title: '移除所有菜单',
+            content: '此操作将删除所有已有菜单并稍后由您自行手动添加，确定执行？',
+            showCancel: true,
+            success: (res) => {
+                if (res.confirm) {
+                    this.setData({
+                        menu: []
+                    })
+                    app.globalData.menu = []
+                    wx.removeStorageSync('menu')
+                }
+            }
         })
-        app.globalData.menu = []
+
     },
 
     deleteSelected() {
@@ -58,6 +79,11 @@ Page({
             menu: this.data.menu.filter(m => !m.selected)
         })
         app.globalData.menu = this.data.menu.map(m => m.val)
+        this.storeMenu()
+    },
+
+    storeMenu() {
+        wx.setStorageSync('menu', this.data.menu.map(m => m.val))
     }
 
 })
