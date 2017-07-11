@@ -83,7 +83,9 @@ Page({
     },
 
     storeMenu() {
-        wx.setStorageSync('menu', this.data.menu.map(m => m.val))
+        const newMenu = this.data.menu.map(m => m.val)
+        app.globalData.menu = newMenu
+        wx.setStorageSync('menu', newMenu)
     }
 
 })

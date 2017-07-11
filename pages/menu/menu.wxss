@@ -12,16 +12,13 @@ page {
 
 .head input {
   flex: 1;
-  border: 1px solid grey;
-  padding: 0 10rpx;
+  box-sizing: border-box;
+  border: 1px solid rgba(0,0,0,.3);
+  height: 2rem;
+  line-height: 2rem;
+  padding: 0 20rpx;
   border-radius: 5rpx;
-  margin-right: 20rpx;
-}
-
-.head button {
-  height: 60rpx;
-  display: flex;
-  align-items: center;
+  margin: 20rpx 40rpx;
 }
 
 .list {
