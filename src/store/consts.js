@@ -1,0 +1,6 @@
+export const SET_RECOMMEND = Symbol()
+export const ADD_MENU = Symbol()
+export const REMOVE_MENU = Symbol()
+export const CLEAR_MENU = Symbol()
+export const ADD_HISTORY = Symbol()
+export const CLEAR_HISTORY = Symbol()
