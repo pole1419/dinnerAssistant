@@ -1,17 +1,17 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
+import {Provider} from 'mobx-react'
 import App from './App';
+import rootStore from './stores'
 import Index from './pages/Index';
 import Menu from './pages/Menu'
 import History from './pages/History'
 import registerServiceWorker from './registerServiceWorker';
 import { Router, Route, IndexRoute, hashHistory } from 'react-router'
-import { Provider } from 'react-redux'
-import store from './store'
 
 ReactDOM.render(
-    <Provider store={store}>
-        <Router history={hashHistory}>
+    <Provider rootStore={rootStore}>
+        <Router history={hashHistory} >
             <Route path="/" component={App}>
                 <IndexRoute component={Index} />
                 <Route path="/index" component={Index} />

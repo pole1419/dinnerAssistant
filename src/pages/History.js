@@ -1,12 +1,13 @@
 import React, { Component } from 'react'
+import { observer, inject } from 'mobx-react'
 import style from '../assets/style/History.css'
-import { connect } from 'react-redux'
-import { bindActionCreators } from 'redux'
-import * as allActions from '../store/actions'
+import util from '../common/util'
 
-class History extends Component {
+@inject('rootStore')
+@observer
+export default class History extends Component {
     render() {
-        const hasRecord = this.props.history.length,
+        const hasRecord = this.props.rootStore.recordList.length,
             el = hasRecord ? this.renderHistory.bind(this) : this.renderAnimation.bind(this)
         return (
             <div className={style.history}>
@@ -17,24 +18,26 @@ class History extends Component {
         )
     }
 
-    componenWillUpdate() {
-        debugger
+    clearRecord = () => {
+        this.props.rootStore.clearRecord()
     }
 
     renderHistory() {
+        const history = this.props.rootStore.recordList
         return (
             <div className={style.history}>
                 <div className={style.wrapper}>
                     {
-                        this.props.history.map(item => (
-                            <div className={style.item} >
-                                <span>{item.date}</span>
-                                <span>{item.record}</span>
+                        history.map((item, idx) => (
+                            <div className={style.item} key={idx}>
+                                <span>{util.getDateStr(item.date)}</span>
+                                <span>{util.getWeekStr(item.date)}</span>
+                                <span>{item.name}</span>
                             </div>
                         ))
                     }
                 </div>
-                <button className="btn100">清除记录</button>
+                <button className="btn100" onClick={this.clearRecord}>清除记录</button>
             </div>
         )
     }
@@ -51,18 +54,3 @@ class History extends Component {
     }
 
 }
-
-const mapStateToProps = state => (
-    {
-        history: state.history
-    }
-)
-
-const mapDispatchToProps = dispatch => ({
-    actions: bindActionCreators(allActions, dispatch)
-})
-
-export default connect(
-    mapStateToProps,
-    mapDispatchToProps
-)(History)

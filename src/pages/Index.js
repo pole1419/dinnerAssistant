@@ -1,11 +1,11 @@
 import React, { Component } from 'react'
+import { observer, inject } from 'mobx-react'
 import style from '../assets/style/Index.css'
-import { connect } from 'react-redux'
-import { bindActionCreators } from 'redux'
-import * as allActions from '../store/actions'
 import util from '../common/util'
 
-class Index extends Component {
+@inject('rootStore')
+@observer
+export default class Index extends Component {
     constructor(props) {
         super(props)
         this.state = {
@@ -47,7 +47,7 @@ class Index extends Component {
     }
 
     initRecommend() {
-        const menu = this.props.menu
+        const menu = this.props.rootStore.menuList
         const idx = Math.floor(Math.random() * menu.length)
         this.setState({
             recommend: menu[idx]
@@ -55,11 +55,11 @@ class Index extends Component {
     }
 
     changeRecommend() {
-        if(this.state.isChanging) { return }
+        if (this.state.isChanging) { return }
         this.setState({
             isChanging: true
         })
-        const menu = this.props.menu
+        const menu = this.props.rootStore.menuList
         const end = setInterval(() => {
             const idx = Math.floor(Math.random() * menu.length)
             this.setState({
@@ -76,26 +76,7 @@ class Index extends Component {
     }
 
     saveRecommend() {
-        if(this.state.isChanging) { return }
-        this.props.actions.setRecommend(this.state.recommend)
+        if (this.state.isChanging) { return }
+        this.props.rootStore.addRecord(this.state.recommend)
     }
 }
-
-
-const mapStateToProps = state => (
-    {   
-        recommend: state.recommend,
-        menu: state.menu
-    }
-)
-
-const mapDispatchToProps = dispatch => (
-    {
-        actions: bindActionCreators(allActions, dispatch)
-    }
-)
-
-export default connect (
-    mapStateToProps,
-    mapDispatchToProps
-)(Index)
