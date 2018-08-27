@@ -1,0 +1,21 @@
+@import './config';
+
+.footer {
+    display: flex;
+    padding: .5rem 0;
+    border-top: 1px solid rgba(0,0,0,.2);
+    > div{
+        flex: 1;
+        @include flexCenter;
+        flex-direction: column;
+        img {
+            width: 1.5rem;
+            height: 1.5rem;
+            margin-bottom: 0.2rem;
+        }
+        span {
+            font-size: 1.2rem;
+            line-height: 1.2rem;
+        }
+    }
+}

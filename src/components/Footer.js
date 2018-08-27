@@ -1,13 +1,11 @@
 import React, { Component } from 'react'
-import style from '../assets/style/Footer.css'
-// import { hashHistory } from 'react-router'
-
+import style from '../assets/style/footer.scss'
 class Footer extends Component {
     render() {
         return (
             <div className={style.footer}>
-                <div onClick={this.toPage.bind(this, 'index')}>
-                    <img src={require('../assets/img/home.png')}/>
+                <div onClick={this.toPage.bind(this, 'home')}>
+                    <img src={require('../assets/img/home.png')} />
                     <button>Index</button>
                 </div>
                 <div onClick={this.toPage.bind(this, 'menu')}>
@@ -22,8 +20,8 @@ class Footer extends Component {
         )
     }
 
-    toPage(page) {
-        // hashHistory.push(`/${page}`)
+    toPage = path => {
+        this.props.history.push(`/${path}`)
     }
 }
 

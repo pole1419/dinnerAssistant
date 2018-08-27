@@ -1,19 +1,17 @@
 import React, { Component } from 'react'
-import style from '../assets/style/Header.css'
-// import { hashHistory } from 'react-router'
-
+import style from '../assets/style/header.scss'
 class Header extends Component {
+    back = () => {
+        this.props.history.goBack()
+    }
+
     render() {
         return (
             <header className={style.header}>
-                <i className={style.back} onClick={this.back.bind(this)}></i>
+                <i className={style.back} onClick={this.back}></i>
                 <span>title</span>
             </header>
         )
-    }
-
-    back() {
-        // hashHistory.goBack()
     }
 }
 

@@ -1,6 +1,8 @@
 import React, { Component } from 'react'
-import style from '../assets/style/Index.css'
+import style from '../assets/style/home.scss'
 import util from '../common/util'
+import config from '../config/index'
+console.log(config)
 
 export default class Index extends Component {
     constructor(props) {
@@ -18,7 +20,7 @@ export default class Index extends Component {
         const date = util.getDateStr(),
             week = util.getWeekStr()
         return (
-            <div className={style.index}>
+            <div className={style.home}>
                 <div className={style.banner}>
                     <img src={require('../assets/img/banner.jpg')} />
                 </div>
@@ -44,7 +46,7 @@ export default class Index extends Component {
     }
 
     initRecommend() {
-        const menu = this.props.rootStore.menuList
+        const menu = config.defaultMenu
         const idx = Math.floor(Math.random() * menu.length)
         this.setState({
             recommend: menu[idx]
@@ -56,7 +58,7 @@ export default class Index extends Component {
         this.setState({
             isChanging: true
         })
-        const menu = this.props.rootStore.menuList
+        const menu = config.defaultMenu
         const end = setInterval(() => {
             const idx = Math.floor(Math.random() * menu.length)
             this.setState({
