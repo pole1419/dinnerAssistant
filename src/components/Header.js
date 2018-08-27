@@ -1,6 +1,6 @@
 import React, { Component } from 'react'
 import style from '../assets/style/Header.css'
-import { hashHistory } from 'react-router'
+// import { hashHistory } from 'react-router'
 
 class Header extends Component {
     render() {
@@ -13,7 +13,7 @@ class Header extends Component {
     }
 
     back() {
-        hashHistory.goBack()
+        // hashHistory.goBack()
     }
 }
 

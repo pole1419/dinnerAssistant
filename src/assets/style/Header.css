@@ -7,7 +7,7 @@
     background-color: rgba(0, 0, 0, .2)
 }
 .back {
-    composes: arraw from './Public.css';
+    /* composes: arraw from './Public.css'; */
     position: absolute;
     left: 1rem;
     top: .8rem;

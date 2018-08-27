@@ -35,10 +35,10 @@
   justify-content: space-between;
 }
 .change{
-  composes: btn from './Public.css'
+  /* composes: btn from './Public.css' */
 }
 .save{
-  composes: btn from './Public.css'
+  /* composes: btn from './Public.css' */
 }
 .random button:last-child {
   background-color: rgb(143,212,7);

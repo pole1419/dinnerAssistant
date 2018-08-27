@@ -1,10 +1,7 @@
 import React, { Component } from 'react'
-import { observer, inject } from 'mobx-react'
 import style from '../assets/style/Index.css'
 import util from '../common/util'
 
-@inject('rootStore')
-@observer
 export default class Index extends Component {
     constructor(props) {
         super(props)
@@ -77,6 +74,6 @@ export default class Index extends Component {
 
     saveRecommend() {
         if (this.state.isChanging) { return }
-        this.props.rootStore.addRecord(this.state.recommend)
+        // this.props.rootStore.addRecord(this.state.recommend)
     }
 }

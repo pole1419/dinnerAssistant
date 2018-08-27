@@ -1,6 +1,6 @@
 import React, { Component } from 'react'
 import style from '../assets/style/Footer.css'
-import { hashHistory } from 'react-router'
+// import { hashHistory } from 'react-router'
 
 class Footer extends Component {
     render() {
@@ -23,7 +23,7 @@ class Footer extends Component {
     }
 
     toPage(page) {
-        hashHistory.push(`/${page}`)
+        // hashHistory.push(`/${page}`)
     }
 }
 
