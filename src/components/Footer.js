@@ -12,7 +12,7 @@ class Footer extends Component {
                     <img src={require('../assets/img/menu.png')} />
                     <button>Menu</button>
                 </div>
-                <div onClick={this.toPage.bind(this, 'history')}>
+                <div onClick={this.toPage.bind(this, 'test')}>
                     <img src={require('../assets/img/history.png')} />
                     <button>History</button>
                 </div>

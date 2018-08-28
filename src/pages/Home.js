@@ -22,7 +22,7 @@ export default class Index extends Component {
         return (
             <div className={style.home}>
                 <div className={style.banner}>
-                    <img src={require('../assets/img/banner.jpg')} />
+                    <img src={require('../assets/img/banner.jpg')} alt=""/>
                 </div>
                 <div className={style.content}>
                     <div className={style.date}>

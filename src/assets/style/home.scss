@@ -15,18 +15,28 @@
     font-size: 1.4rem;
     > div {
       margin: 1rem 0;
-      width: 45%;
-      text-align: center;
+      display: flex;
+      align-items: center;
       span:first-child {
         margin-right: 1rem;
       }
+      &.recommend {
+        span:last-child {
+          display: inline-block;
+          width: 7rem;
+          text-align: right;
+          overflow: hidden;
+          text-overflow:ellipsis;
+          white-space: nowrap;
+        }
+        
+      }
     }
     .random {
-      display: flex;
-      justify-content: space-between;
       button {
         @include button;
         &:last-child {
+          margin-left: 3rem;
           background-color: rgb(143,212,7);
           color: white;
         }

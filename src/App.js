@@ -10,6 +10,10 @@ import Home from './pages/Home'
 import History from './pages/History'
 // import NotFound from './pages/NotFound'
 
+const Test = () => (
+  <div>teste page</div>
+)
+
 class App extends Component {
   render() {
     return (
@@ -21,6 +25,7 @@ class App extends Component {
              <Redirect from="/" to="/home" />
             {/* <Route path="/menu" component={Menu}/> */}
             <Route path="/history" component={History}/>
+            <Route path="/test" component={Test}/>
           </Switch>
         </div>
         <Route component={Footer} />

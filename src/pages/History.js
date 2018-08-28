@@ -44,7 +44,7 @@ export default class History extends Component {
         return (
             <div className={style.history}>
                 <div className={style.noRecord}>
-                    <img src={require('../assets/img/no_record.jpeg')} />
+                    <img src={require('../assets/img/no_record.jpeg')} alt="" />
                     <span>哎呀，你来到了知识的荒野</span>
                 </div >
             </div>
