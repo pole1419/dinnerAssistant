@@ -1,11 +1,11 @@
 {
-  "pages":[
+  "pages": [
     "pages/index/index",
     "pages/menu/menu",
     "pages/history/history"
   ],
-  "window":{
-    "backgroundTextStyle":"light",
+  "window": {
+    "backgroundTextStyle": "light",
     "navigationBarTitleText": "Dinner Assistant",
     "navigationBarBackgroundColor": "white",
     "navigationBarTextStyle": "black"
@@ -35,5 +35,6 @@
         "selectedIconPath": "images/history_on.png"
       }
     ]
-  }
+  },
+  "sitemapLocation": "sitemap.json"
 }

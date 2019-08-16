@@ -1,20 +1,16 @@
-//app.js
 const defaultMenu = require('./utils/config.js').defaultMenu
 
 App({
     globalData: {
-        // userInfo: null
+        userInfo: null,
         menu: [],
         history: [],
     },
 
     onLaunch() {
-        //调用API从本地缓存中获取数据
-        // var logs = wx.getStorageSync('logs') || []
-        // logs.unshift(Date.now())
-        // wx.setStorageSync('logs', logs)
         this.restoreData()
     },
+
 
     restoreData: function () {
         const menuStore = wx.getStorageSync('menu') || defaultMenu
